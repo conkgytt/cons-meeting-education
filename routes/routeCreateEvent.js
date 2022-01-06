@@ -21,11 +21,9 @@ router.post("/", (req, res, next) => {
 		attendees,
 		start: {
 			dateTime: startAt,
-			timeZone: "+7",
 		},
 		end: {
 			dateTime: endAt,
-			timeZone: "+7",
 		},
 		conferenceData: {
 			createRequest: {
