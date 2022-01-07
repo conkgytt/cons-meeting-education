@@ -3,7 +3,7 @@ const router = express.Router();
 
 const { calendar, calendarId } = require("../calendar");
 
-router.post("/", (req, res, next) => {
+router.delete("/", (req, res, next) => {
 	const eventId = req.body.eventId;
 
 	const deleteOption = { calendarId, eventId };

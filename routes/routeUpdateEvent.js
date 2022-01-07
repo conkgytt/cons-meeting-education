@@ -3,7 +3,7 @@ const router = express.Router();
 
 const { calendar, calendarId } = require("../calendar");
 
-router.post("/", (req, res, next) => {
+router.patch("/", (req, res, next) => {
 	const eventId = req.body.eventId;
 	const summary = `${req.body.subjects} - ${req.body.name}`;
 	const attendees = req.body.members.map((content) => ({
