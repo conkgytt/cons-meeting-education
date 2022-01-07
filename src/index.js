@@ -8,9 +8,14 @@ app.use(
 	"*",
 	cors({
 		origin: "*",
-		methods: "*",
 	})
 );
+app.use(
+	cors({
+		origin: "*",
+	})
+);
+app.use(cors());
 
 require("dotenv").config();
 
