@@ -6,7 +6,8 @@ const handlebars = require("express-handlebars");
 
 app.use(
 	cors({
-		origin: "https://meet.google.com",
+		origin: "*",
+		methods: "*",
 	})
 );
 
