@@ -5,6 +5,7 @@ const app = express();
 const handlebars = require("express-handlebars");
 
 app.use(
+	"*",
 	cors({
 		origin: "*",
 		methods: "*",
