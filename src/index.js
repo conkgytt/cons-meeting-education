@@ -3,7 +3,12 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const handlebars = require("express-handlebars");
-app.use(cors());
+
+app.use(
+	cors({
+		origin: "https://meet.google.com",
+	})
+);
 
 require("dotenv").config();
 
