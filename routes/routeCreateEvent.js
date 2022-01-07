@@ -4,7 +4,6 @@ const router = express.Router();
 const { calendar, calendarId } = require("../calendar");
 
 router.post("/", (req, res, next) => {
-	console.log(req.body);
 	const summary = `${req.body.subjects} - ${req.body.name}`;
 	const attendees = req.body.members.map((content) => ({
 		email: content,
