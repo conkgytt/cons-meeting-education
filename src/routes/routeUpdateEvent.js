@@ -13,6 +13,8 @@ router.patch("/", (req, res, next) => {
 	const endAt = new Date(startAt.valueOf());
 	endAt.setMinutes(endAt.getMinutes() + Number(req.body.duration));
 
+	console.log(startAt, endAt);
+
 	const newEvent = {
 		summary,
 		attendees,
