@@ -35,6 +35,24 @@ router.patch("/", (req, res, next) => {
 		} else {
 			console.log("Update success!", event.data);
 			res.json({ success: true, startAt, endAt });
+
+			const startAtLocalUTC = new Date(startAt.valueOf());
+			startAtLocalUTC.setHours(
+				startAt.getHours() + 7 - startAt.getTimezoneOffset() * 60
+			);
+			const endAtLocalUTC = new Date(endAt.valueOf());
+			endAtLocalUTC.setHours(
+				endAt.getHours() + 7 - endAt.getTimezoneOffset() * 60
+			);
+
+			res.json({
+				success: true,
+				summary,
+				startAt: startAtLocalUTC,
+				endAt: endAtLocalUTC,
+				googleMeetLink: event.data.hangoutLink,
+				eventId: event.data.id,
+			});
 		}
 	};
 

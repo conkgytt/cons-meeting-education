@@ -66,7 +66,13 @@ router.post("/", (req, res, next) => {
 			console.log("Calendar event successfully created!", event.data);
 
 			const startAtLocalUTC = new Date(startAt.valueOf());
+			startAtLocalUTC.setHours(
+				startAt.getHours() + 7 - startAt.getTimezoneOffset() * 60
+			);
 			const endAtLocalUTC = new Date(endAt.valueOf());
+			endAtLocalUTC.setHours(
+				endAt.getHours() + 7 - endAt.getTimezoneOffset() * 60
+			);
 
 			res.json({
 				success: true,
