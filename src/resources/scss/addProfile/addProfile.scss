@@ -6,7 +6,7 @@
 
 	.add-profile-ctn {
 		@include size(600px, false);
-		@include maxSize(100vw, calc(100vh - 40px));
+		@include maxSize(100vw, 100vh);
 		padding: 15px;
 		border-radius: 10px;
 		background-color: white;
