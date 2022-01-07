@@ -7,7 +7,7 @@ function RouteIndex(app) {
 	app.use("/create", createEventRouter);
 	app.use("/delete", deleteEventRouter);
 	app.use("/update", updateEventRouter);
-	app.post("/auth", authRouter);
+	// app.use("/auth", authRouter);
 }
 
 module.exports = RouteIndex;
