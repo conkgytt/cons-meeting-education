@@ -4,12 +4,6 @@ const cors = require("cors");
 const app = express();
 const handlebars = require("express-handlebars");
 
-app.use(
-	cors({
-		origin: "*",
-	})
-);
-
 require("dotenv").config();
 
 const port = process.env.PORT || process.env.LOCAL_PORT;
@@ -21,6 +15,7 @@ app.set("views", path.join(__dirname, "resources/views"));
 app.use("/static", express.static(path.join(__dirname, "public")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
 const routeIndex = require("./routes/routeIndex");
 routeIndex(app);
