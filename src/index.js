@@ -1,21 +1,21 @@
-const path = require("path")
+const path = require("path");
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const handlebars = require("express-handlebars")
+const handlebars = require("express-handlebars");
+app.use(cors());
 
 require("dotenv").config();
 
 const port = process.env.PORT || process.env.LOCAL_PORT;
 
-app.engine(".hbs", handlebars.engine({extname: '.hbs'}))
-app.set("view engine", ".hbs")
-app.set("views", path.join(__dirname, "resources/views"))
+app.engine(".hbs", handlebars.engine({ extname: ".hbs" }));
+app.set("view engine", ".hbs");
+app.set("views", path.join(__dirname, "resources/views"));
 
-app.use(express.static(path.join(__dirname, "public")))
+app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
 
 const routeIndex = require("./routes/routeIndex");
 routeIndex(app);
