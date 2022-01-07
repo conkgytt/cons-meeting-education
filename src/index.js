@@ -5,17 +5,10 @@ const app = express();
 const handlebars = require("express-handlebars");
 
 app.use(
-	"*",
 	cors({
 		origin: "*",
 	})
 );
-app.use(
-	cors({
-		origin: "*",
-	})
-);
-app.use(cors());
 
 require("dotenv").config();
 
