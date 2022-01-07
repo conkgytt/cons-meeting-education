@@ -56,13 +56,13 @@ router.post("/", (req, res, next) => {
 	};
 	const calendarInsertCallback = (err, event) => {
 		if (err) {
-			console.error("Error creating calender event!");
+			console.error("Error creating calender event!", err);
 			res.json({
 				success: false,
 				errors: err.errors,
 			});
 		} else {
-			console.log("Calendar event successfully created!");
+			console.log("Calendar event successfully created!", event);
 
 			const startAtLocalUTC = new Date(startAt.valueOf());
 			startAtLocalUTC.setMinutes(

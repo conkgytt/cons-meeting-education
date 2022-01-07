@@ -9,10 +9,10 @@ router.delete("/", (req, res, next) => {
 	const deleteOption = { calendarId, eventId };
 	const deleteHandle = (err, event) => {
 		if (err) {
-			console.log("Delete error!");
+			console.log("Delete error!", err);
 			res.json({ success: false, errors: err.errors });
 		} else {
-			console.log("Delete success!");
+			console.log("Delete success!", event);
 			res.json({ success: true });
 		}
 	};
