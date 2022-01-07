@@ -10,6 +10,7 @@ router.patch("/", (req, res, next) => {
 		email: content,
 	}));
 	const startAt = new Date(req.body.start);
+	startAt.setHours(startAt.getHours() - 7);
 	const endAt = new Date(startAt.valueOf());
 	endAt.setMinutes(endAt.getMinutes() + Number(req.body.duration));
 
@@ -20,11 +21,11 @@ router.patch("/", (req, res, next) => {
 		attendees,
 		start: {
 			dateTime: startAt,
-			timeZone: "0",
+			timeZone: "+7",
 		},
 		end: {
 			dateTime: endAt,
-			timeZone: "0",
+			timeZone: "+7",
 		},
 	};
 
