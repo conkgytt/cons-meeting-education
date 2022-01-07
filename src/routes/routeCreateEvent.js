@@ -63,7 +63,7 @@ router.post("/", (req, res, next) => {
 				errors: err.errors,
 			});
 		} else {
-			console.log("Calendar event successfully created!", event);
+			console.log("Calendar event successfully created!", event.data);
 
 			const startAtLocalUTC = new Date(startAt.valueOf());
 			startAtLocalUTC.setMinutes(

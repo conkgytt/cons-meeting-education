@@ -12,7 +12,7 @@ router.delete("/", (req, res, next) => {
 			console.log("Delete error!", err);
 			res.json({ success: false, errors: err.errors });
 		} else {
-			console.log("Delete success!", event);
+			console.log("Delete success!", event.data);
 			res.json({ success: true });
 		}
 	};

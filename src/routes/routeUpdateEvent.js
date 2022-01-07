@@ -35,7 +35,7 @@ router.patch("/", (req, res, next) => {
 			console.log("Update error!", err);
 			res.json({ success: false, errors: err.errors });
 		} else {
-			console.log("Update success!", event);
+			console.log("Update success!", event.data);
 			res.json({ success: true, startAt, endAt });
 		}
 	};
