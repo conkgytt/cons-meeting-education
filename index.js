@@ -12,6 +12,7 @@ app.use(
 	cors({
 		origin: "https://meet.google.com/*",
 		methods: ["GET", "POST", "DELETE", "UPDATE"],
+		credentials: true,
 	})
 );
 
