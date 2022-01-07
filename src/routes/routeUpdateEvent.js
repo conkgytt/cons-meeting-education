@@ -18,9 +18,11 @@ router.patch("/", (req, res, next) => {
 		attendees,
 		start: {
 			dateTime: startAt,
+			timeZone: "+7",
 		},
 		end: {
 			dateTime: endAt,
+			timeZone: "+7",
 		},
 	};
 
@@ -30,7 +32,7 @@ router.patch("/", (req, res, next) => {
 			console.log("Update error!", err);
 			res.json({ success: false, errors: err.errors });
 		} else {
-			console.log("Update success!");
+			console.log("Update success!", event);
 			res.json({ success: true, startAt, endAt });
 		}
 	};
