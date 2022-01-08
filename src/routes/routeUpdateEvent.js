@@ -45,6 +45,8 @@ router.patch("/", (req, res, next) => {
 				endAt.getHours() + 7 - endAt.getTimezoneOffset() * 60
 			);
 
+			console.log(startAtLocalUTC, endAtLocalUTC);
+
 			res.json({
 				success: true,
 				summary,
